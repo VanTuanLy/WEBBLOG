@@ -1,11 +1,11 @@
 # WEBBLOG
-A. Tải và cài đặt xampp version 8.2.12 / PHP 8.2.12 để chạy được các file php
+A. Tải và cài đặt xampp version 8.2.12 / PHP 8.2.12 để chạy được các file php trên https://www.apachefriends.org/download.html
 
 B. Nếu chưa có SQL Server Management Studio thì cần phải tải về vì em sử dụng công cụ đó để lưu database của web  
 
 C. Sau khi tải xampp về thì để cài đặt và sử dụng thư viện sqlsrv (Microsoft Drivers for PHP for SQL Server) với XAMPP, cần thực hiện các bước sau:
 1. Tải về và cài đặt driver SQLSRV:
-- Truy cập trang Microsoft Drivers for PHP for SQL Server.
+- Truy cập trang Microsoft Drivers for PHP for SQL Server: https://learn.microsoft.com/en-us/sql/connect/php/download-drivers-php-sql-server?view=sql-server-ver16
 - Tải về phiên bản tương thích với PHP và hệ điều hành của bạn.
 - Đảm bảo tải về cả sqlsrv và pdo_sqlsrv.
 - Giải nén file tải về, bạn sẽ thấy các file .dll tương ứng với các phiên bản PHP khác nhau.
@@ -26,7 +26,7 @@ extension=php_sqlsrv_82_ts_x64.dll
 - Mở XAMPP Control Panel.
 - Bấm nút "Stop" cho Apache, sau đó bấm nút "Start" để khởi động lại Apache.
 5. Kiểm tra cài đặt:
-- Để chắc chắn rằng các extension đã được cài đặt thành công, bạn có thể tạo một file PHP để kiểm tra. Tạo một file mới tên là check_sqlsrv.php trong thư mục project của bạn (C:\xampp\htdocs\myproject\check_sqlsrv.php) và thêm nội dung sau:
+- Để chắc chắn rằng các extension đã được cài đặt thành công, bạn có thể tạo một file PHP để kiểm tra. Tạo một file mới tên là check_sqlsrv.php trong thư mục htdocs của bạn (C:\xampp\htdocs\check_sqlsrv.php) và thêm nội dung sau:
 ```
 <?php
 if (extension_loaded('sqlsrv')) {
@@ -42,7 +42,7 @@ if (extension_loaded('pdo_sqlsrv')) {
 }
 ?>
 ```
-- Truy cập vào file này qua trình duyệt: http://localhost/myproject/check_sqlsrv.php. Nếu các extension được cài đặt đúng, bạn sẽ thấy thông báo SQLSRV extension is loaded! và PDO_SQLSRV extension is loaded!.
+- Truy cập vào file này qua trình duyệt: http://localhost/check_sqlsrv.php. Nếu các extension được cài đặt đúng, bạn sẽ thấy thông báo SQLSRV extension is loaded! và PDO_SQLSRV extension is loaded!.
 
 D. Sau khi cài đặt thành công thì đưa folder chứa project của em vào trong thư mục htdocs của XAMPP (thường nằm ở C:\xampp\htdocs trên Windows).
 
@@ -69,4 +69,4 @@ $connectionOptions = array(
 
 G. Khởi Động XAMPP Control Panel: Mở XAMPP Control Panel và khởi động Apache
 
-H. Truy Cập Dự Án từ Trình Duyệt: Truy cập vào dự án từ trình duyệt bằng cách nhập http://localhost/your_project_name. (http://localhost/WEBBLOG/html/index.html)
+H. Truy Cập Dự Án từ Trình Duyệt: Truy cập vào dự án từ trình duyệt bằng cách nhập http://localhost/your_project_name. vd: (http://localhost/WEBBLOG/html/index.html)
