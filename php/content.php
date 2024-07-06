@@ -8,9 +8,7 @@ if(isset($_GET['writer']) && isset($_GET['title'])) {
 }
 $serverName = "LAPTOP-MUS82LPQ"; // Tên server của bạn
 $connectionOptions = array(
-    "Database" => "QLLOGIN", // Tên cơ sở dữ liệu của bạn
-    /*"Uid" => "your_username", // Tên đăng nhập SQL Server
-    "PWD" => "your_password" // Mật khẩu SQL Server*/
+    "Database" => "QLLOGIN"
 );
 
 // Kết nối đến SQL Server
