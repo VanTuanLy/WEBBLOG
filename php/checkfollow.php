@@ -1,8 +1,6 @@
 <?php
 session_start();
-$serverName = "LAPTOP-MUS82LPQ";
-$connectionOptions = array("Database" => "QLLOGIN");
-$conn = sqlsrv_connect($serverName, $connectionOptions);
+require './connect.php';
 
 $response = array(
     'followed' => false
@@ -10,10 +8,6 @@ $response = array(
 
 $username = $_SESSION['username'];
 $writer = $_SESSION['writer'];
-
-if($conn === false) {
-    die(print_r(sqlsrv_errors(), true));
-}
 
 $sql = "SELECT * FROM FOLLOW WHERE FOLLOWER = ? AND BE_FOLLOWED = ?";
 $params = array($username, $writer);

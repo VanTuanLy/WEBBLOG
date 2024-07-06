@@ -6,17 +6,7 @@ if(isset($_GET['writer']) && isset($_GET['title'])) {
     $_SESSION['writer'] = $_GET['writer'];
     $_SESSION['title'] = $_GET['title'];
 }
-$serverName = "LAPTOP-MUS82LPQ"; // Tên server của bạn
-$connectionOptions = array(
-    "Database" => "QLLOGIN"
-);
-
-// Kết nối đến SQL Server
-$conn = sqlsrv_connect($serverName, $connectionOptions);
-
-if ($conn === false) {
-    die(print_r(sqlsrv_errors(), true));
-}
+require './connect.php';
 
 $sql = "SELECT * FROM WRITE_CONTENT WHERE WRITERS = ? AND TITLES = ? ";
 $params = array($writer, $title);

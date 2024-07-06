@@ -1,16 +1,6 @@
 <?php
 session_start();
-$serverName = "LAPTOP-MUS82LPQ"; // Tên server của bạn
-$connectionOptions = array(
-    "Database" => "QLLOGIN"
-);
-
-// Kết nối đến SQL Server
-$conn = sqlsrv_connect($serverName, $connectionOptions);
-
-if ($conn === false) {
-    die(print_r(sqlsrv_errors(), true));
-}
+require './connect.php';
 
 $sql = "SELECT WRITERS, TITLES, HASHTAGS, LIKES FROM WRITE_CONTENT, FOLLOW, Users WHERE FOLLOWER = username AND BE_FOLLOWED = WRITERS AND FOLLOWER = ? ORDER BY LIKES DESC";
 $params = array($_SESSION['username']);
