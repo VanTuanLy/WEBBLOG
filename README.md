@@ -44,7 +44,7 @@ if (extension_loaded('pdo_sqlsrv')) {
 ```
 - Truy cập vào file này qua trình duyệt: http://localhost/myproject/check_sqlsrv.php. Nếu các extension được cài đặt đúng, bạn sẽ thấy thông báo SQLSRV extension is loaded! và PDO_SQLSRV extension is loaded!.
 
-D. Sau khi cài đặt thành công thì đưa folder chứa project của em (trừ file webblog_database.sql) vào trong thư mục htdocs của XAMPP (thường nằm ở C:\xampp\htdocs trên Windows).
+D. Sau khi cài đặt thành công thì đưa folder chứa project của em vào trong thư mục htdocs của XAMPP (thường nằm ở C:\xampp\htdocs trên Windows).
 
 E. Sau đó cần phải tạo database trên sql server:
 
