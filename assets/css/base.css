@@ -1,0 +1,147 @@
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+/* PHP */
+
+.notification {
+    color: rgba(137,196,244);
+    display: block;
+    font-size: 32px;
+}
+
+.linktoLogin {
+    display: block;
+    text-decoration: none;
+    font-size: 32px;
+    color: rgb(78, 164, 235);
+}
+
+.grid {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.grid__full-width {
+    width: 100%;
+}
+
+.grid__row {
+    display: flex;
+    flex-wrap:wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+/*Test*/
+.grid__column-2 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.6667%;
+}
+
+.grid__column-2-4 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 20%;
+}
+
+.grid__column-10 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 83.3334%;
+}
+
+/* animation */
+@keyframes fadeIn{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+}
+
+.modal__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.modal__body {
+    margin: auto;
+    width: 500px;
+    height: 520px;
+    border-radius: 12px;
+    background-color: #fff;
+    z-index: 1;
+}
+
+::placeholder {
+    color: #757575;
+    font-weight: 200px;
+    font-size: 1.4rem;
+}
+
+.fa-facebook-f {
+    color: #425893;
+}
+
+.fa-google {
+    color: #d75432;
+}
+
+.fa-magnifying-glass {
+    color: #fff;
+}
+
+input[type="text"] {
+    padding-left: 12px;
+    font-size: 1.6rem;
+} 
+
+input[type="password"] {
+    padding-left: 12px;
+}
+
+textarea {
+    resize: both;
+    width: 97.5%;
+    margin-left: 16px;
+    height: 500px;
+    padding: 10px;
+    border: 1px solid #c1c4cb;
+    font-size: 1.6rem;
+    border-radius: 3px;
+    line-height: 1.5;
+}
+
+textarea:focus {
+    border-color: #c1c4cb;
+    outline: none;
+}
+

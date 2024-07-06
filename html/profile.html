@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* user profile*/
+
+        .logo {
+            margin-top: 90px;
+            margin-bottom: 50px;
+        }
+
+        .auth-form {
+            font-size: 1.6rem;
+            line-height: 50px;
+        }
+
+        .user__information {
+            font-size: 2.0rem;
+            text-align: center;
+            color: rgb(22, 124, 249);
+        }
+
+        .user__profile {
+            padding-right: 30px;
+            padding-left: 30px;
+        }
+
+        .user__profile-item {
+            list-style: none;
+            border-bottom: 1px solid rgb(67, 157, 231);
+            color: rgb(2, 70, 112);
+        }
+
+        .user__profile-logout--btn {
+            text-decoration: none;
+            color: rgb(58 122 241);
+            display: block;
+            text-align: center;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="modal">
+        <div class="modal__overlay"></div>
+            <div class="modal__body">
+                <div class="auth-form__logo logo">
+                    <a href="./index.html" class="auth-form__logo">Logo</a>
+                </div>
+                <div class="auth-form">
+                    <div class="user__information">Account information:</div>
+                    <ul class="user__profile" id="profile"></ul>
+                    <a href="./login.html" class="user__profile-logout--btn">Log out</a>
+               </div>
+            </div>
+    </div>
+    <script>
+        fetch('../php/session.php')
+        .then(response => response.json())
+        .then(data => {
+            if (data.loggedin) {
+                document.getElementById("profile").innerHTML = `<li class="user__profile-item email" >Email: ${data.email}</li>
+                                                                <li class="user__profile-item yourname" >Name: ${data.yourname}</li>
+                                                                <li class="user__profile-item username" >Username: ${data.username}</li>`;
+            }else {
+                window.location.href = './login.html';
+            } 
+        });
+    </script>
+    <script src="../js/main.js"></script>
+</body>

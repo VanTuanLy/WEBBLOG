@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="modal">
+        <div class="modal__overlay"></div>
+            <div class="modal__body">
+               
+                <div class="auth-form">
+                    <form action="../php/login.php" method="post" class="auth-form__container">
+                        <div class="auth-form__logo">
+                            <a href="./index.html" class="auth-form__logo">Logo</a>
+                        </div>
+                        <div class="auth-form__header">
+                            <h3 class="auth-form__heading">Login</h3>
+                            <span class="auth-form__switch-btn">
+                                <a href="./register.html" class="auth-form__switch-btn--register">Register</a>
+                            </span>
+
+                        </div>
+                        <div class="auth-form__form">
+                            <div class="auth-form__group">
+                                <label for="username">Username:</label>
+                                <input type="text" id="username" name="username" class="auth-form__input" placeholder="Username or email" required>
+                            </div>
+                            <div class="auth-form__group">
+                                <label for="passwords">Password:</label>
+                                <input type="password" id="passwords" name="passwords" class="auth-form__input" placeholder="Password" required>
+                            </div>
+                        </div>
+                        <div class="auth-form__aside">
+                            <p class="auth-form__policy-text">
+                                <input type="checkbox" id="policy" class="auth-form__policy-checkbox" required>
+                                <label for="policy" class="auth-form__policy-checkbox--agree">I agree</label>
+                                <a href="" class="auth-form__policy-link"> Terms of service ...</a>
+                            </p>
+                        </div>
+                        <div class="auth-form__controls">
+                            <button type="submit" class="btn btn--with-controls btn__login">Login</button>
+                        </div>
+                    </form>
+                    <div class="auth-form__socials">
+                        <p class="auth-form__socials-text">Login with</p>
+                        <div class="auth-form__socials-link">
+                            <a href="" class="btn btn--with-icon">
+                                <i class="fa-brands fa-facebook-f"></i>
+                                Facebook
+                            </a>
+                        
+                        <a href="" class="btn btn--with-icon">
+                            <i class="fa-brands fa-google"></i>
+                            Google
+                        </a>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+    </div>
+</body>
+</html>

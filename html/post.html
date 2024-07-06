@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="post__body">
+        <div class="app">
+            <header class="header">
+                <div class="grid">
+                    <nav class="header__navbar">
+                        <ul class="header__navbar-list">
+                            <li class="header__navbar-item">
+                                <a href="./index.html" class="header__navbar-item-link">Logo</a>
+                            </li>
+                            <li class="header__navbar-item">
+                                <a href="./index.html" class="header__navbar-item-link">Post</a>
+                            </li>
+                            <li class="header__navbar-item">
+                                <a href="" class="header__navbar-item-link">Q&A</a>
+                            </li>
+                            <li class="header__navbar-item">
+                                <a href="" class="header__navbar-item-link">Discuss</a>
+                            </li>
+                        
+                            <li class="header__navbar-item header__navbar-search">
+                                <input type="text" class="header__navbar-item--search" placeholder="Search">
+                                <button class="header__navbar-item--btn">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+                            </li>
+                            <li class="header__navbar-item header__navbar-item--click">
+                                Information
+                                <div class="header__notify">
+                                    <header class="header__notify-header">
+                                        <h3>Information</h3>
+                                    </header>
+                                    <ul class="header__notify-list">
+                                        <li class="header__notify-item">
+                                            <a href="" class="header__notify-link">
+                                                <div class="header__notify-info">
+                                                    <span class="header__notify-name">Tổng Kết và Công Bố Kết quả Chính Thức May Fest 2024</span>
+                                                    <span class="header__notify-description">Thứ 6, 8:00 CH</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="header__notify-item">
+                                            <a href="" class="header__notify-link">
+                                                <div class="header__notify-info">
+                                                    <span class="header__notify-name">Tổng Kết và Công Bố Kết quả Chính Thức May Fest 2024</span>
+                                                    <span class="header__notify-description">Thứ 6, 8:00 CH</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <footer class="header__notify-footer">
+                                        <a href="" class="header__notify-footer--link">All information</a>
+                                    </footer>
+                                </div>
+                            </li>
+                            <li class="header__navbar-item">VI</li>
+                            <li class="header__navbar-item" id="login-register">
+                                <a href="./login.html" class="header__navbar-item-link header__navbar-item-link--strong">Login/Register</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+            </header>
+            <form action="../php/post.php" method="post" class="post__body-form">
+                <div class="post__body-header">
+                    <div class="post__body-header--title">
+                        <label for="TITLES"></label>
+                        <input type="text" id="TITLES" name="TITLES" class="post__body-header--title-input" placeholder="Title" required>
+                    </div>
+                    <div class="post__body-header--tag">
+                        <label for="HASHTAGS"></label>
+                        <input type="text" id="HASHTAGS" name="HASHTAGS" class="post__body-header--tag-input" placeholder="Add your tag" required>
+                    </div>
+                    <div class="post__body-header--option">
+                        <input type="checkbox" id="toggle" class="post__body-header--toggle">
+                        <label for="toggle" class="post__body-header--publish">
+                            Publish
+                        </label>
+                        <ul class="post__body-header--list">
+                            <li class="post__body-header--item post__body-header--item-title">
+                                Publish your post
+                            </li>
+                            <li class="post__body-header--item post__body-header--item-right">
+                                License: All rights reserved
+                            </li>
+                            <li class="post__body-header--item">
+                                Display:
+                                <input type="radio" name="option" id="option1" class="post__body-header--item-list">
+                                <label for="option1" class="label">Public</label>
+                                </input>
+                                <input type="radio" name="option" id="option2" class="post__body-header--item-list">
+                                <label for="option2" class="label">Only me</label>
+                                </input>
+                            </li>
+                            <li class="post__body-header--item">
+                                <button type="submit" class="post__body-header--item-btn">
+                                    Publish
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="post__body-container">
+                    <label for="CONTENTS"></label>
+                    <textarea id="CONTENTS" name="CONTENTS" >
+                    </textarea>
+                </div>
+
+                <footer class="footer">
+                    
+                </footer>
+            </form>
+        </div>
+    </div>
+    <script>
+        fetch('../php/session.php')
+        .then(response => response.json())
+        .then(data => {
+            if (data.loggedin) {
+                document.getElementById("login-register").innerHTML = `<a href="./profile.html" class="header__navbar-item-link header__navbar-item-link--strong">${data.username}</a>`;
+            }else {
+                window.location.href = './login.html';
+            } 
+        });
+    </script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
