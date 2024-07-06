@@ -58,7 +58,7 @@ E. Sau đó cần phải tạo database trên sql server:
 3. Nhấn vào nút New Query để tạo ra chỗ để viết code, sau đó copy code từ file webblog_database.sql vào chỗ đó.
 4. Nhấn execute để chạy code
 
-F. Lưu ý: Trong các file php có biến $serverName = "LAPTOP-MUS82LPQ" hãy đổi hết giá trị của biến đó thành tên server của bạn và nếu bạn sử dụng SQL Server Authentication ở bước 2 của phần E thì cần thêm các dòng code ở tất cả các biến $connectionOptions của các file php như sau:
+F. Lưu ý: Trong các file php có biến $serverName = "LAPTOP-MUS82LPQ" hãy đổi hết giá trị của biến đó thành tên server của bạn và nếu bạn sử dụng SQL Server Authentication ở bước 2 của phần E thì cần sửa lại biến $connectionOptions của file connect.php như sau:
 ```
 $connectionOptions = array(
 "Database" => "QLLOGIN",
