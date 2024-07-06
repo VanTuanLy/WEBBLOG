@@ -1,9 +1,9 @@
 # WEBBLOG
-Tải và cài đặt xampp version 8.2.12 / PHP 8.2.12 để chạy được các file php
+A. Tải và cài đặt xampp version 8.2.12 / PHP 8.2.12 để chạy được các file php
 
-Nếu chưa có SQL Server Management Studio thì cần phải tải về vì em sử dụng công cụ đó để lưu database của web  
+B. Nếu chưa có SQL Server Management Studio thì cần phải tải về vì em sử dụng công cụ đó để lưu database của web  
 
-Sau khi tải xampp về thì để cài đặt và sử dụng thư viện sqlsrv (Microsoft Drivers for PHP for SQL Server) với XAMPP, cần thực hiện các bước sau:
+C. Sau khi tải xampp về thì để cài đặt và sử dụng thư viện sqlsrv (Microsoft Drivers for PHP for SQL Server) với XAMPP, cần thực hiện các bước sau:
 1. Tải về và cài đặt driver SQLSRV:
 - Truy cập trang Microsoft Drivers for PHP for SQL Server.
 - Tải về phiên bản tương thích với PHP và hệ điều hành của bạn.
@@ -40,9 +40,9 @@ if (extension_loaded('pdo_sqlsrv')) {
 ?>
 - Truy cập vào file này qua trình duyệt: http://localhost/myproject/check_sqlsrv.php. Nếu các extension được cài đặt đúng, bạn sẽ thấy thông báo SQLSRV extension is loaded! và PDO_SQLSRV extension is loaded!.
 
-Sau khi cài đặt thành công thì đưa folder chứa project của em (trừ file webblog_database.sql) vào trong thư mục htdocs của XAMPP (thường nằm ở C:\xampp\htdocs trên Windows).
+D. Sau khi cài đặt thành công thì đưa folder chứa project của em (trừ file webblog_database.sql) vào trong thư mục htdocs của XAMPP (thường nằm ở C:\xampp\htdocs trên Windows).
 
-Sau đó cần phải tạo database trên sql server:
+E. Sau đó cần phải tạo database trên sql server:
 
 1. Mở SQL Server Management Studio (SSMS).
 2. Kết Nối Tới SQL Server:
@@ -54,8 +54,13 @@ Sau đó cần phải tạo database trên sql server:
 3. Nhấn vào nút New Query để tạo ra chỗ để viết code, sau đó copy code từ file webblog_database.sql vào chỗ đó.
 4. Nhấn execute để chạy code
 
-Lưu ý: Trong các file php có biến $serverName = "LAPTOP-MUS82LPQ" hãy đổi hết giá trị của biến đó thành tên server của bạn
+F. Lưu ý: Trong các file php có biến $serverName = "LAPTOP-MUS82LPQ" hãy đổi hết giá trị của biến đó thành tên server của bạn và nếu bạn sử dụng SQL Server Authentication ở bước 2 của phần E thì cần thêm các dòng code ở tất cả các biến $connectionOptions của các file php như sau:
+$connectionOptions = array(
+"Database" => "QLLOGIN",
+"Uid" => "your_username", // Tên đăng nhập SQL Server
+"PWD" => "your_password" // Mật khẩu SQL Server*/
+);
 
-Khởi Động XAMPP Control Panel: Mở XAMPP Control Panel và khởi động Apache
+G. Khởi Động XAMPP Control Panel: Mở XAMPP Control Panel và khởi động Apache
 
-Truy Cập Dự Án từ Trình Duyệt: Truy cập vào dự án từ trình duyệt bằng cách nhập http://localhost/your_project_name. (http://localhost/WEBBLOG/html/index.html)
+H. Truy Cập Dự Án từ Trình Duyệt: Truy cập vào dự án từ trình duyệt bằng cách nhập http://localhost/your_project_name. (http://localhost/WEBBLOG/html/index.html)
