@@ -16,3 +16,4 @@
 - Design: like Viblo web but with some changes
 - Database: use SQL server to create the database to save user data
 4. Creator: Ly Tuan Van
+Note: Logo has not yet been created
